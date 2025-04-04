@@ -127,7 +127,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "C:\\Faster Dev\\yoliday-assn\\backend\\generated\\prisma",
+      "value": "C:\\Faster Dev\\yoliday-assn-be\\generated\\prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -138,10 +138,18 @@ const config = {
         "fromEnvVar": null,
         "value": "windows",
         "native": true
+      },
+      {
+        "fromEnvVar": null,
+        "value": "debian-openssl-3.0.x"
+      },
+      {
+        "fromEnvVar": null,
+        "value": "rhel-openssl-3.0.x"
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "C:\\Faster Dev\\yoliday-assn\\backend\\prisma\\schema.prisma",
+    "sourceFilePath": "C:\\Faster Dev\\yoliday-assn-be\\prisma\\schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
@@ -155,6 +163,7 @@ const config = {
     "db"
   ],
   "activeProvider": "mysql",
+  "postinstall": false,
   "inlineDatasources": {
     "db": {
       "url": {
@@ -163,8 +172,8 @@ const config = {
       }
     }
   },
-  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?\n// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init\n\ngenerator client {\n  provider = \"prisma-client-js\"\n  output   = \"../generated/prisma\"\n}\n\ndatasource db {\n  provider = \"mysql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel Projects {\n  id          Int     @id @default(autoincrement())\n  title       String\n  description String\n  category    String\n  author      String\n  image_url   String  @db.VarChar(255)\n  cart        Boolean\n}\n",
-  "inlineSchemaHash": "3c7e93e5a1cf89c5a0f6c2401b08b23cd0e701ab977efdb23cdf880057867d06",
+  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?\n// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init\n\ngenerator client {\n  provider      = \"prisma-client-js\"\n  output        = \"../generated/prisma\"\n  binaryTargets = [\"native\", \"debian-openssl-3.0.x\", \"rhel-openssl-3.0.x\"]\n}\n\ndatasource db {\n  provider = \"mysql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel Projects {\n  id          Int     @id @default(autoincrement())\n  title       String\n  description String\n  category    String\n  author      String\n  image_url   String  @db.VarChar(255)\n  cart        Boolean\n}\n",
+  "inlineSchemaHash": "c0ea98d50440806963f88303f534b7ec5d02fb7545e6483f3d9682fac469aa7a",
   "copyEngine": true
 }
 config.dirname = '/'
